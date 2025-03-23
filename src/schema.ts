@@ -1,6 +1,6 @@
-const { gql } = require("apollo-server-express");
+import { gql } from "apollo-server-express";
 
-const typeDefs = gql`
+const schema = gql`
   type Quote {
     id: ID!
     text: String!
@@ -50,4 +50,4 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = typeDefs;
+export default schema;

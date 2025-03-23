@@ -9,7 +9,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addCharacter: async (_, { name, actor, charType, doctorNumber }) => {
+    addCharacter: async (_: any, { name, actor, charType, doctorNumber }: { name: string; actor: string; charType: string; doctorNumber?: number }) => {
       return await prisma.character.create({
         data: {
           name,
@@ -20,7 +20,7 @@ const resolvers = {
       });
     },
    
-    addEpisode: async (_, { title, originalAirDate, series }) => {
+    addEpisode: async (_: any, { title, originalAirDate, series }: { title: string; originalAirDate: string; series: string }) => {
       return await prisma.episode.create({
         data: {
           title,
@@ -33,4 +33,4 @@ const resolvers = {
   }
 };
 
-module.exports = resolvers;
+export default resolvers;
